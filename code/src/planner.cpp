@@ -1273,7 +1273,7 @@ inline std::list<GroundedAction> planner(Env* env)
                 auto newConditions = applyEffect(act, current->conditions);
                 if (!NotInClosedList(newConditions, closed)) continue;
 
-                constexpr int mode = 0; // choose heuristic mode
+                constexpr int mode = 3; // choose heuristic mode
                 if (IsInOpenList(newConditions, open)) {
                     UpdateOpenList(std::make_shared<Node>(
                         current, newConditions, current->g + 1,
